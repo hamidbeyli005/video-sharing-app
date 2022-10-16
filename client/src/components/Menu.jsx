@@ -6,6 +6,7 @@ import { AiOutlineLike } from "react-icons/ai";
 import { BiUserCircle } from "react-icons/bi";
 import { FiSettings, FiHelpCircle } from "react-icons/fi";
 import { GoReport } from "react-icons/go";
+import {Link } from "react-router-dom"
 import {
   MdHomeFilled,
   MdOutlineExplore,
@@ -45,7 +46,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Logo = styled.div`
+const LogoLink = styled(Link)`
   position: sticky;
   top: 0;
   left: 0;
@@ -55,12 +56,16 @@ const Logo = styled.div`
   font-size: 18px;
   font-weight: 900;
   gap: 6px;
-  padding: 16px 26px;
+  /* padding: 16px 26px; */
+  padding: 6px 2px;
+  margin: 10px 24px;
   background: ${({ theme }) => theme.bg};
   z-index: 5;
+  color: ${({ theme }) => theme.text};
+
 
   cursor: pointer;
-  > svg {
+  >svg {
     color: red;
     font-size: 30px;
   }
@@ -129,10 +134,10 @@ const Button = styled.div`
 const Menu = ({ setDarkMode, darkMode }) => {
   return (
     <Container>
-      <Logo>
+      <LogoLink to="/">
         <BsYoutube />
         HamidTube
-      </Logo>
+      </LogoLink>
       <Wrapper>
         <Item className="active">
           <MdHomeFilled />
@@ -331,7 +336,7 @@ const Menu = ({ setDarkMode, darkMode }) => {
         </Item>
         <Item onClick={() => setDarkMode(!darkMode)}>
           <BsMoonStars />
-          Dark Mode
+          {darkMode?"Dark Mode":"Light Mode"}
         </Item>
       </Wrapper>
     </Container>
