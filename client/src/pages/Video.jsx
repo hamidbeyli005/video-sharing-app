@@ -127,6 +127,7 @@ const Video = () => {
             <Button>
               <BsHandThumbsUp /> like
             </Button>
+            
             <Button>
               <BsHandThumbsDown /> Dislike
             </Button>
